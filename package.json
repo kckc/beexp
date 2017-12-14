@@ -1,0 +1,13 @@
+{
+  "name": "beexp",
+  "version": "0.0.0",
+  "description": "be experiment repo",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "restify": "^6.3.4",
+    "typescript": "^2.6.2",
+    "@types/node": "^8.5.1",
+    "@types/restify": "^5.0.6"
+  }
+}
