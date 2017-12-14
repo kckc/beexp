@@ -1,7 +1,8 @@
 import { Request, Response, Next, createServer } from "restify";
+import * as os from 'os';
 
 function respond(req: Request, res: Response, next: Next) {
-    res.send('hello ' + req.params.name);
+    res.send('hello ' + req.params.name + " from " + os.hostname);
     next()
 }
 
