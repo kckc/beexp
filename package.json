@@ -9,5 +9,8 @@
     "typescript": "^2.6.2",
     "@types/node": "^8.5.1",
     "@types/restify": "^5.0.6"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }
