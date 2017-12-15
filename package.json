@@ -5,12 +5,16 @@
   "main": "dist/index.js",
   "license": "MIT",
   "devDependencies": {
-    "restify": "^6.3.4",
-    "typescript": "^2.6.2",
     "@types/node": "^8.5.1",
-    "@types/restify": "^5.0.6"
+    "@types/restify": "^5.0.6",
+    "restify": "^6.3.4",
+    "typescript": "^2.6.2"
   },
   "scripts": {
     "build": "tsc"
+  },
+  "dependencies": {
+    "@types/redis": "^2.8.3",
+    "redis": "^2.8.0"
   }
 }
