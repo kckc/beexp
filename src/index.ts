@@ -1,8 +1,8 @@
-import { Request, Response, Next, createServer } from "restify";
+import * as express from 'express';
 import * as os from 'os';
 import * as redis from 'redis';
 
-function respond(req: Request, res: Response, next: Next) {
+function respond(req: express.Request, res: express.Response) {
     let r = redis.createClient({
         host: "redis",
         db: 0,
@@ -16,15 +16,15 @@ function respond(req: Request, res: Response, next: Next) {
         else
             res.send('hello ' + req.params.name + " from " + os.hostname + os.EOL
                 + "visits: " + number);
-        next();
     });
 }
 
-var server = createServer();
+var server = express();
+server.get('/health', (req, res) => res.send({status:"ok"}));
 
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
 server.listen(3000, function() {
-    console.log('%s listening at %s', server.name, server.url);
+    console.log('server running at port 3000');
 });
